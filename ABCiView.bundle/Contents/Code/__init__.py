@@ -49,27 +49,6 @@ def GetSeriesByCaegory(category):
 
   return oc
 
-@route('/video/aubciview/episode/{series}')
-def GetEpisodesBySeries(series):
-
-
-
-  show = iView_Series(series)
-
-  oc = ObjectContainer(view_group='InfoList', title2 = show.title, no_cache = True)
-
-  episodes = show.episodes
-
-  rtmp_url = iView_Config.RTMP_URL()
-
-  for item in episodes:
-
-    oc.add(Play_iView(item[1], item[2], item[3], item[4], item[5], rtmp_url))
-
-  oc.objects.sort(key = lambda obj: obj.title)
-
-  return oc
-
 @route('/video/aubciview/episode/play')
 def Play_iView(iView_Title, iView_Summary, iView_Path, iView_Thumb, iView_Duration, video_url, include_container=False):
 
@@ -97,3 +76,24 @@ def Play_iView(iView_Title, iView_Summary, iView_Path, iView_Thumb, iView_Durati
     return ObjectContainer(objects=[vco])
   else:
     return vco
+
+@route('/video/aubciview/episode/{series}')
+def GetEpisodesBySeries(series):
+
+
+
+  show = iView_Series(series)
+
+  oc = ObjectContainer(view_group='InfoList', title2 = show.title, no_cache = True)
+
+  episodes = show.episodes
+
+  rtmp_url = iView_Config.RTMP_URL()
+
+  for item in episodes:
+
+    oc.add(Play_iView(item[1], item[2], item[3], item[4], item[5], rtmp_url))
+
+  oc.objects.sort(key = lambda obj: obj.title)
+
+  return oc
