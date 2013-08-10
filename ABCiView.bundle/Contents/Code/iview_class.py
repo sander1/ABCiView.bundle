@@ -70,7 +70,7 @@ class iView_Series(object):
       description = ep['d']
       url = ep['n'][:-4]
       thumb = ep['s']
-      duration = int(ep['j'])
+      duration = int(ep['j']) * 1000
       tmp = []
       tmp.append(id)
       tmp.append(title)
