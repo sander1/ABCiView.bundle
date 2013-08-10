@@ -55,7 +55,7 @@ def Play_iView(iView_Title, iView_Summary, iView_Path, iView_Thumb, iView_Durati
   HTTP.ClearCache()
 
   vco = VideoClipObject(
-      key = Callback(Play_iView, iView_Title=iView_Title, iView_Summary=iView_Summary, iView_Path=iView_Path, iView_Thumb=iView_Thumb, iView_Duration=iView_Duration, include_container=True),
+      key = Callback(Play_iView, iView_Title=iView_Title, iView_Summary=iView_Summary, iView_Path=iView_Path, iView_Thumb=iView_Thumb, iView_Duration=iView_Duration, video_url=video_url, include_container=True),
       rating_key = iView_Path,
       title = iView_Title,
       summary = iView_Summary,
