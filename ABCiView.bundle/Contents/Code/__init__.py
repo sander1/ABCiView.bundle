@@ -60,7 +60,7 @@ def Play_iView(iView_Title, iView_Summary, iView_Path, iView_Thumb, iView_Durati
       title = iView_Title,
       summary = iView_Summary,
       thumb = iView_Thumb,
-      duration = iView_Duration,
+      duration = int(iView_Duration),
       items = [
         MediaObject(
           parts = [
