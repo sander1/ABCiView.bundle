@@ -109,7 +109,3 @@ class iView_Category(object):
         series.append(tmp)
 
     return series
-
-
-
-
