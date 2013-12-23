@@ -12,5 +12,9 @@
 	<array>
 		<string>UseRealRTMP</string>
 	</array>
+	<key>PlexPluginRegions</key>
+	<array>
+		<string>AU</string>
+	</array>
 </dict>
 </plist>
